@@ -3,7 +3,6 @@ from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup, Labeled
 from telegram.ext import Application, CommandHandler, CallbackQueryHandler, MessageHandler, PreCheckoutQueryHandler, filters, ContextTypes
  
 # =============================================
-
 TOKEN = "8889945966:AAEzDqu0OpKq71w1NHczLUvUb5541nxXqsI"  # токен от @BotFather
 # =============================================
  
@@ -156,7 +155,8 @@ async def button(update: Update, context: ContextTypes.DEFAULT_TYPE):
             title="HopeForward Fund — Donation",
             description=t['impact'].get(amount, f"Donation of {amount} Stars"),
             payload=f"donate_{amount}",
-            currency="XTR",  # Telegram Stars
+            provider_token="",
+            currency="XTR",
             prices=[LabeledPrice(label="Donation", amount=amount)]
         )
  
